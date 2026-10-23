@@ -1,0 +1,21 @@
+{
+  "textures": [
+    {"id":"T_PetrolRefinery_Red_Inner","source":"/Game/AssetSets/Modules/WaterPurifier/V1/textures/T_WaterPurifier_Stationary_01_BaseColor"},
+    {"id":"T_PetrolRefinery_Red_Outer","source":"/Game/AssetSets/Modules/WaterPurifier/V1/textures/T_WaterPurifier_Stationary_02_BaseColor"}
+  ],
+  "materials": [
+    {"id":"MI_PetrolRefinery_Red_Outer","source":"/Game/ModulesAnimations/OilGeneratorTower/Materials/MI_OilGenerator_Body_2","hueShift":0,"textureOverrides":{"DiffuseVT":"T_PetrolRefinery_Red_Outer"}},
+    {"id":"MI_PetrolRefinery_Red_Inner","source":"/Game/ModulesAnimations/OilGeneratorTower/Materials/MI_OilGenerator_Body","hueShift":0,"textureOverrides":{"DiffuseVT":"T_PetrolRefinery_Red_Inner"}},
+    {"id":"MI_PortableDiesel_Yellow","source":"/Game/ModulesAnimations/DieselGeneratorPortable/Materials/MI_PortableGenerator_Red","hueShift":0.16666667},
+    {"id":"MI_PortableMethane_Green","source":"/Game/ModulesAnimations/DieselGeneratorPortable/Materials/MI_PortableGenerator_Red","hueShift":0.33333334},
+    {"id":"MI_LargeDiesel_Yellow","source":"/Game/ModulesAnimations/DieselGeneratorStationary/Materials/MI_DieselGeneratorStationary_Master","hueShift":0.16666667},
+    {"id":"MI_LargeMethane_Green","source":"/Game/ModulesAnimations/DieselGeneratorStationary/Materials/MI_DieselGeneratorStationary_Master","hueShift":0.33333334}
+  ],
+  "bindings": [
+    {"blueprint":"BP_Module_StationaryPetrolRefinery","component":"StaticMesh_GEN_VARIABLE","materials":["MI_PetrolRefinery_Red_Outer","MI_PetrolRefinery_Red_Inner"]},
+    {"blueprint":"BP_Module_PortableDieselElectricGenerator","component":"StaticMesh_GEN_VARIABLE","materials":["MI_PortableDiesel_Yellow"]},
+    {"blueprint":"BP_Module_PortableMethaneElectricGenerator","component":"StaticMesh_GEN_VARIABLE","materials":["MI_PortableMethane_Green"]},
+    {"blueprint":"BP_Module_LargeDieselElectricGenerator","component":"StaticMesh_GEN_VARIABLE","materials":["MI_LargeDiesel_Yellow"]},
+    {"blueprint":"BP_Module_LargeMethaneElectricGenerator","component":"StaticMesh_GEN_VARIABLE","materials":["MI_LargeMethane_Green"]}
+  ]
+}

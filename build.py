@@ -7,7 +7,7 @@ def run(*args):subprocess.run([str(x) for x in args],check=True)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  p=argparse.ArgumentParser()
- for name in ('mapping','refinery-stock','generator-stock','retoc','output'):p.add_argument('--'+name,type=Path,required=True)
+ for name in ('mapping','refinery-stock','generator-stock','appearance-stock','retoc','output'):p.add_argument('--'+name,type=Path,required=True)
  a=p.parse_args();out=a.output.resolve()
  if out.exists() and any(out.iterdir()):raise SystemExit('Output must be empty; use a new build directory.')
  if sha(a.mapping)!='24ed679c5be228e6635939494db2f7682281250035d1980821b2a4a3e3d1e33d':raise SystemExit('Unexpected game mapping')
@@ -19,6 +19,10 @@ def main():
   shutil.copytree(out/name,out/'source',dirs_exist_ok=True)
  shutil.copy2(a.refinery_stock/'scriptobjects.bin',out/'source/scriptobjects.bin')
  assert len(list((out/'source').rglob('*.uasset')))==17
+ project=ROOT/'tools/AppearanceBuilder'
+ run('dotnet','build',project/'AppearanceBuilder.csproj','-c','Release','--nologo')
+ run('dotnet',project/'bin/Release/net10.0/AppearanceBuilder.dll',a.mapping,a.appearance_stock,ROOT/'appearance.json',out/'source',out/'appearance-reports')
+ assert len(list((out/'source').rglob('*.uasset')))==25
  package=out/'package';package.mkdir()
  run(a.retoc,'to-zen',out/'source',package/'CaretakerEnergy_P.utoc','--version','UE5_6')
  run(a.retoc,'verify',package/'CaretakerEnergy_P.utoc')
