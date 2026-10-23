@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "addon": "CaretakerEnergy",
+  "container": "CaretakerEnergy_P",
+  "assets": [
+    {
+      "type": "Item",
+      "id": "Item:DA_Item_Module_StationaryPetrolRefinery",
+      "path": "/Game/Data/Assets/Modules/DA_Item_Module_StationaryPetrolRefinery.DA_Item_Module_StationaryPetrolRefinery"
+    },
+    {
+      "type": "Skill",
+      "id": "Skill:DA_Skill_Engineering_Stationary_Petrol_Refinery",
+      "path": "/Game/Data/Assets/Skill/Modules/DA_Skill_Engineering_Stationary_Petrol_Refinery.DA_Skill_Engineering_Stationary_Petrol_Refinery"
+    },
+    {
+      "type": "Item",
+      "id": "Item:DA_Item_Module_PortableDieselElectricGenerator",
+      "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableDieselElectricGenerator.DA_Item_Module_PortableDieselElectricGenerator"
+    },
+    {
+      "type": "Skill",
+      "id": "Skill:DA_Skill_Engineering_Portable_Diesel_Electric_Generator",
+      "path": "/Game/Data/Assets/Skill/Modules/DA_Skill_Engineering_Portable_Diesel_Electric_Generator.DA_Skill_Engineering_Portable_Diesel_Electric_Generator"
+    },
+    {
+      "type": "Item",
+      "id": "Item:DA_Item_Module_LargeDieselElectricGenerator",
+      "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeDieselElectricGenerator.DA_Item_Module_LargeDieselElectricGenerator"
+    },
+    {
+      "type": "Skill",
+      "id": "Skill:DA_Skill_Engineering_Large_Diesel_Electric_Generator",
+      "path": "/Game/Data/Assets/Skill/Modules/DA_Skill_Engineering_Large_Diesel_Electric_Generator.DA_Skill_Engineering_Large_Diesel_Electric_Generator"
+    },
+    {
+      "type": "Item",
+      "id": "Item:DA_Item_Module_PortableMethaneElectricGenerator",
+      "path": "/Game/Data/Assets/Modules/DA_Item_Module_PortableMethaneElectricGenerator.DA_Item_Module_PortableMethaneElectricGenerator"
+    },
+    {
+      "type": "Skill",
+      "id": "Skill:DA_Skill_Engineering_Portable_Methane_Electric_Generator",
+      "path": "/Game/Data/Assets/Skill/Modules/DA_Skill_Engineering_Portable_Methane_Electric_Generator.DA_Skill_Engineering_Portable_Methane_Electric_Generator"
+    },
+    {
+      "type": "Item",
+      "id": "Item:DA_Item_Module_LargeMethaneElectricGenerator",
+      "path": "/Game/Data/Assets/Modules/DA_Item_Module_LargeMethaneElectricGenerator.DA_Item_Module_LargeMethaneElectricGenerator"
+    },
+    {
+      "type": "Skill",
+      "id": "Skill:DA_Skill_Engineering_Large_Methane_Electric_Generator",
+      "path": "/Game/Data/Assets/Skill/Modules/DA_Skill_Engineering_Large_Methane_Electric_Generator.DA_Skill_Engineering_Large_Methane_Electric_Generator"
+    }
+  ]
+}

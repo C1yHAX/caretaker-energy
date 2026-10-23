@@ -1,0 +1,17 @@
+build*/
+dist/
+tools/lib/
+**/bin/
+**/obj/
+*.usmap
+*.jmap*
+*.uasset
+*.uexp
+*.ubulk
+*.pak
+*.utoc
+*.ucas
+*.log
+__pycache__/
+.env*
+deployment/

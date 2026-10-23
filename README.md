@@ -1,0 +1,58 @@
+# Caretaker Energy
+
+Vier zusätzliche Diesel- und Methan-Stromgeneratoren **und eine stationäre Benzinraffinerie in einer gemeinsamen Mod** für *The Last Caretaker*. Die vorhandenen Benzingeneratoren, die tragbare Benzinraffinerie und die Dieselraffinerie bleiben verfügbar.
+
+[Download auf GitHub](https://github.com/C1yHAX/caretaker-energy/releases/tag/v1.1.0) · [Download auf GitLab](https://gitlab.com/c0d1ngf1eber/caretaker-energy/-/releases/v1.1.0)
+
+## Inhalt und Balance
+
+| Neues Gerät | Freischaltstufe | Punkte | Leistung / Verarbeitung | Brennstoffbedarf pro Spielstunde |
+|---|---:|---:|---|---:|
+| Tragbarer Dieselgenerator | 8 | 2 | 10 kW | 1.500 Diesel |
+| Großer Dieselgenerator | 17 | 3 | 33 kW | 4.500 Diesel |
+| Tragbarer Methangenerator | 19 | 2 | 10 kW | 20.000 Methan |
+| Großer Methangenerator | 21 | 3 | 33 kW | 60.000 Methan |
+| Stationäre Benzinraffinerie | 10 | 2 | 16.000 Benzin pro Stunde bei 3 kW | 5.000 organische Umwandlungseinheiten pro Stunde |
+
+Die Mengen sind die internen Spielwerte. Diesel ist effizienter, benötigt zusätzliche Pumpen und Rahmen und wird nach dem jeweiligen Benzingenerator freigeschaltet. Methan folgt der Gasproduktion: der tragbare Generator auf Stufe 19 mit dem Methan-Extraktor, der große auf Stufe 21. Die stationäre Raffinerie folgt deutlich nach der tragbaren Raffinerie auf Stufe 5.
+
+Diesel verwendet Treibstoffschläuche, Methan Gasleitungen. Der Methaneingang ist ausdrücklich auf 72.000 Einheiten pro Stunde ausgelegt. Strom- und CO₂-Ausgänge entsprechen den Vorlagen. Ein Methan-Extraktor mit **zwei** tragbaren Generatoren liefert rechnerisch etwa 18 kW brutto und 8 kW netto; ein einzelner tragbarer Generator deckt lediglich die 10 kW Eigenverbrauch des Extraktors. Der Sabatier-Kreislauf bleibt verlustbehaftet.
+
+Die neue Benzinraffinerie nimmt organisches Material ohne Gewichtszulassungsgrenze auf. Dies ändert weder das Umwandlungsverhältnis noch den Benzinpuffer. Das separate Paket **Caretaker Refinery Intake** hebt dieselbe Grenze auch an den beiden bestehenden Biomasse-Raffinerien auf; es gehört zum vollständigen lokalen Modpack.
+
+Die Geräte nutzen die vorhandenen Modelle und Symbole ihrer Vorlagen. Namen, Brennstoffanschlüsse, Umwandlungen und Skills sind eigenständig. Gegenstandsgewicht: 0, passend zum ursprünglichen Modpack. Die Modtexte sind deutsch, auch bei anders eingestellter Spielsprache.
+
+## Installation
+
+Zielversion: **0.10.0.653173, Steam-Build 25982825**. Andere Spielversionen sind nicht bestätigt.
+
+1. [AssetBridge von NotLazy](https://www.nexusmods.com/thelastcaretaker/mods/225) installieren; dieses Paket wurde mit **0.4.0** gebaut und geprüft. AssetBridge wird separat vom Autor bezogen.
+2. Spiel und Modmanager schließen. Aus dem Release die Datei `Caretaker-Energy-1.1.0.zip` herunterladen und entpacken.
+3. Den im ZIP enthaltenen Ordner `Voyage` in den Spielordner kopieren. Ergebnis: `Voyage/Content/Paks/~mods/CaretakerEnergy/` enthält `.pak`, `.utoc`, `.ucas` und `.tlcaddon.json`. Alle vier Dateien gehören zusammen.
+4. Bei einem Upgrade die früheren Ordner **CaretakerFuelGenerators** und **CaretakerPetrolRefinery** vorher aus dem Paks-Verzeichnis herausnehmen. Nicht zusammen mit dem neuen Paket laden. Alternativ übernimmt der mitgelieferte PowerShell-Installer die Sicherung und den Austausch:
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File .\Install-Energy.ps1 -GamePath 'E:\Games\steamapps\common\Voyage'
+   ```
+
+5. Spiel starten. AssetBridge registriert die fünf Items und fünf Skills. Die Gesamtzahl im Log hängt von weiteren installierten Addons ab.
+
+Die bisherigen Item-, Blueprint- und Skill-Pfade bleiben beim Upgrade erhalten. Die ZIP enthält keine Spielstände, keine fremden Mods und keinen AssetBridge-Cache. Das vollständige Modpack enthält diese gemeinsame Mod bereits; dort nicht noch einmal installieren.
+
+## Prüfung und bekannte Grenzen
+
+Die 17 Assets wurden vollständig gelesen, binär verlustfrei zurückgeschrieben und nach dem Packen mit unveränderten Exportdaten wieder extrahiert. Der Container ist verifiziert; die zehn Registrierungen sind eindeutig. Gegen die vorhandenen Addons wurden Paketpfade auf Überschneidungen geprüft.
+
+**Version 1.1.0 ist eine Vorschau mit statischer Prüfung.** Herstellung, Betrieb unter Last und Speichern/Laden sind für diese kombinierte Fassung noch nicht durch einen vollständigen Spieltest bestätigt. Bitte neue Versionen zunächst mit einer Kopie des Spielstands prüfen.
+
+Vor einer Deinstallation platzierte Geräte abbauen und Gegenstände aus Inventaren/Containern entfernen. Gespeicherte Skills verlieren ohne die Mod ihr Ziel. Die Installation selbst bearbeitet keine Spielstände.
+
+## Quellcode und Änderungen
+
+`generators-spec.json` und `refinery-spec.json` enthalten Balance, Rezepte, Freischaltungen und Texte. Die C#-Builder erzeugen eigene Assets aus den lokal vorhandenen Spielvorlagen. Die Basisspiel-Assets und das Mapping werden nicht im Quellcode-Repository mitgeliefert. Siehe [BUILDING.md](BUILDING.md) und [CHANGELOG.md](CHANGELOG.md).
+
+Eigener Build- und Installationscode: MIT, siehe [LICENSE](LICENSE). Spielmodelle, Symbole und daraus abgeleitete gekochte Assets gehören weiterhin ihren jeweiligen Rechteinhabern; die Code-Lizenz erteilt daran keine eigenständigen Rechte. *The Last Caretaker* wird von Channel37 entwickelt. Dies ist eine inoffizielle Mod.
+
+## English
+
+Adds portable and large diesel/methane electric generators plus a stationary petrol refinery in **one additive mod**. Unlock levels: diesel 8/17, methane 19/21, refinery 10. Existing game generators and refineries remain available. Requires the game build above and AssetBridge; download it separately from the linked author page. Install all four package files under `Voyage/Content/Paks/~mods/CaretakerEnergy`. Remove the previous separate CaretakerFuelGenerators/CaretakerPetrolRefinery containers when upgrading; saved asset identities are retained. In-game labels are German. Version 1.1.0 is a statically validated preview; a full gameplay/save-reload test is still pending.

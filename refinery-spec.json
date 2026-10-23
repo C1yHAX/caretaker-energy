@@ -1,0 +1,49 @@
+{
+  "comment": "Stationary petrol refinery cloned from the stock Diesel Refinery (DA_Item_Module_DieselGenerator / BP_Module_DieselGenerator). Edit values here and rerun build.py.",
+  "names": {
+    "item": "DA_Item_Module_StationaryPetrolRefinery",
+    "blueprint": "BP_Module_StationaryPetrolRefinery",
+    "skill": "DA_Skill_Engineering_Stationary_Petrol_Refinery",
+    "stringTable": "ST_Mod_StationaryPetrolRefinery",
+    "moduleName": "Stationary Petrol Refinery",
+    "container": "CaretakerPetrolRefinery_P",
+    "addon": "CaretakerPetrolRefinery"
+  },
+  "skill": {
+    "tier": 10,
+    "cost": 2
+  },
+  "item": {
+    "weight": 0.0,
+    "craftTime": 30.0,
+    "descriptionTier": 2,
+    "descriptionTierComment": "Module size shown in the tooltip type line, as stock does for large variants (DA_Item_Module_ElectricGenerator Tier 2 vs. portable default 1). Not the unlock level.",
+    "components": {
+      "DA_Part_ConnectorPorts": 2,
+      "DA_Part_AlloyFrame": 3,
+      "DA_Part_CompressionPump": 2,
+      "DA_Part_FilteringSystem": 2
+    }
+  },
+  "conversion": {
+    "inputs": {
+      "EModuleResourceType::Electricity": 3000.0,
+      "EModuleResourceType::Custom1": 5000.0
+    },
+    "outputs": {
+      "EModuleResourceType::Petrol": 16000.0
+    }
+  },
+  "liquidColors": {
+    "comment": "Exact float32 constants of the stock Portable Petrol Refinery (BP_Module_PetrolGenerator_Portable.UpdateLiquid).",
+    "Liquid_Color": [0.09411799907684326, 0.02745099924504757, 0.00392200006172061, 1.0],
+    "Foam_Color": [0.041999999433755875, 0.012249999679625034, 0.0017500000540167093, 1.0]
+  },
+  "strings": {
+    "comment": "The game runs with LanguageType=German. A mod string table has no .locres translation, so the source text below is shown in every language.",
+    "namespace": "ST_Mod_StationaryPetrolRefinery",
+    "name": { "key": "Module_Name_StationaryPetrolRefinery", "text": "Benzinraffinerie" },
+    "description": { "key": "Module_Desc_StationaryPetrolRefinery", "text": "Stationäre Raffinerie, die aus organischem Material und Strom Benzin herstellt. Ergiebiger als die tragbare Benzinraffinerie, braucht aber mehr Strom." },
+    "type": { "key": "ModuleTypePetrolProducer", "text": "Benzinproduzent - Stufe {Tier}" }
+  }
+}
