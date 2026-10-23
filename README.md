@@ -43,7 +43,7 @@ Die bisherigen Item-, Blueprint- und Skill-Pfade bleiben beim Upgrade erhalten. 
 
 Die 17 Assets wurden vollständig gelesen, binär verlustfrei zurückgeschrieben und nach dem Packen mit unveränderten Exportdaten wieder extrahiert. Der Container ist verifiziert; die zehn Registrierungen sind eindeutig. Gegen die vorhandenen Addons wurden Paketpfade auf Überschneidungen geprüft.
 
-**Version 1.1.0 ist eine Vorschau mit statischer Prüfung.** Herstellung, Betrieb unter Last und Speichern/Laden sind für diese kombinierte Fassung noch nicht durch einen vollständigen Spieltest bestätigt. Bitte neue Versionen zunächst mit einer Kopie des Spielstands prüfen.
+**Version 1.1.0 bleibt eine Vorschau.** Zusätzlich zur statischen Prüfung wurden die fünf Geräteklassen erfolgreich vom Spiel geladen und die unbegrenzte organische Aufnahme an der geladenen Raffinerievorlage bestätigt. AssetBridge hat alle zehn Energy-Einträge im vollständigen Modpack erfolgreich registriert. Herstellung, Betrieb unter Last und Speichern/Laden sind für diese kombinierte Fassung noch nicht durch einen vollständigen Spieltest bestätigt. Bitte neue Versionen zunächst mit einer Kopie des Spielstands prüfen.
 
 Vor einer Deinstallation platzierte Geräte abbauen und Gegenstände aus Inventaren/Containern entfernen. Gespeicherte Skills verlieren ohne die Mod ihr Ziel. Die Installation selbst bearbeitet keine Spielstände.
 
@@ -55,4 +55,4 @@ Eigener Build- und Installationscode: MIT, siehe [LICENSE](LICENSE). Spielmodell
 
 ## English
 
-Adds portable and large diesel/methane electric generators plus a stationary petrol refinery in **one additive mod**. Unlock levels: diesel 8/17, methane 19/21, refinery 10. Existing game generators and refineries remain available. Requires the game build above and AssetBridge; download it separately from the linked author page. Install all four package files under `Voyage/Content/Paks/~mods/CaretakerEnergy`. Remove the previous separate CaretakerFuelGenerators/CaretakerPetrolRefinery containers when upgrading; saved asset identities are retained. In-game labels are German. Version 1.1.0 is a statically validated preview; a full gameplay/save-reload test is still pending.
+Adds portable and large diesel/methane electric generators plus a stationary petrol refinery in **one additive mod**. Unlock levels: diesel 8/17, methane 19/21, refinery 10. Existing game generators and refineries remain available. Requires the game build above and AssetBridge; download it separately from the linked author page. Install all four package files under `Voyage/Content/Paks/~mods/CaretakerEnergy`. Remove the previous separate CaretakerFuelGenerators/CaretakerPetrolRefinery containers when upgrading; saved asset identities are retained. In-game labels are German. Version 1.1.0 is a preview with static checks and successful in-engine class loading; a full gameplay/save-reload test is still pending.
