@@ -23,3 +23,5 @@ Der Ausgabeordner muss neu oder leer sein. Jeder Builder prüft erwartete Ausgan
 Der Build verändert weder Spielinstallation noch Spielstände. Die erzeugten Berichte enthalten lokale Pfade und gehören nicht in öffentliche Downloads.
 
 Der IconBuilder benötigt die drei originalen UI-Texturen `Icon_Module_PortableGenerator`, `Icon_Module_Generator` und `Icon_Module_OilGenerator` unter `Voyage/Content/UI/Icons/Modules` im `--icon-stock`-Baum. Er verkleinert die fünf mitgelieferten PNG-Quellen auf 256×256, erhält Alpha, übernimmt das native BGRA8-UI-Layout und bindet Items und Skills an eigene Texturpfade. Der vollständige Build läuft unter Windows.
+
+Methan verwendet HueShift 0.41, Desaturation 0.8 und Brightness -0.15 in den beiden eigenen Materialinstanzen. Das nutzt vorhandene Shaderparameter ohne zusätzliche Textur oder Laufzeitcode. Die gedämpfte Lackfarbe orientiert sich an den Original-Methantanks.

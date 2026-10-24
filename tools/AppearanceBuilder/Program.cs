@@ -26,6 +26,17 @@ foreach(var row in (JArray)palette["materials"]){
  Prop<FloatPropertyData>(hue.Value,"ParameterValue").Value=(float)row["hueShift"];
  Prop<GuidPropertyData>(Prop<StructPropertyData>(hue.Value,"ExpressionGUID").Value,"ExpressionGUID").Value=Guid.Empty;
  scalars.Value=scalars.Value.Append(hue).ToArray();
+ if(row["scalarOverrides"] is JObject scalarOverrides){
+  foreach(var pair in scalarOverrides.Properties()){
+   Require(pair.Name is "Desaturation" or "Brightness","Unexpected appearance scalar");
+   var existing=scalars.Value.Cast<StructPropertyData>().SingleOrDefault(x=>Prop<NamePropertyData>(Prop<StructPropertyData>(x.Value,"ParameterInfo").Value,"Name").Value.ToString()==pair.Name);
+   var parameter=existing??(StructPropertyData)hue.Clone();
+   Prop<NamePropertyData>(Prop<StructPropertyData>(parameter.Value,"ParameterInfo").Value,"Name").Value=new FName(a,pair.Name);
+   Prop<FloatPropertyData>(parameter.Value,"ParameterValue").Value=(float)pair.Value;
+   Prop<GuidPropertyData>(Prop<StructPropertyData>(parameter.Value,"ExpressionGUID").Value,"ExpressionGUID").Value=Guid.Empty;
+   if(existing==null)scalars.Value=scalars.Value.Append(parameter).ToArray();
+  }
+ }
  if(row["textureOverrides"] is JObject overrides){
   var textures=Prop<ArrayPropertyData>(root,"TextureParameterValues").Value.Cast<StructPropertyData>().ToArray();
   StructPropertyData Texture(string key)=>textures.Single(x=>Prop<NamePropertyData>(Prop<StructPropertyData>(x.Value,"ParameterInfo").Value,"Name").Value.ToString()==key);
@@ -38,7 +49,7 @@ foreach(var row in (JArray)palette["materials"]){
   }
  }
  var dest=Path.Combine(source,"Voyage","Content",target[6..]+".uasset");WriteChecked(a,dest);
- created[id]=target;log.Add(new{material=id,stock=original,hueShift=(float)row["hueShift"],textureOverrides=row["textureOverrides"],unchanged="normals, roughness, damage, animation, shader permutation"});
+ created[id]=target;log.Add(new{material=id,stock=original,hueShift=(float)row["hueShift"],scalarOverrides=row["scalarOverrides"],textureOverrides=row["textureOverrides"],unchanged="normals, roughness, damage, animation, shader permutation"});
 }
 foreach(var row in (JArray)palette["bindings"]){
  string bp=(string)row["blueprint"],component=(string)row["component"];

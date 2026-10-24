@@ -1,16 +1,37 @@
 {
   "version": "1.0.0",
-  "assets": 30,
-  "ownIconTextures": 5,
-  "itemAndSkillBindings": 10,
-  "originalIconOverrides": 0,
-  "allExistingExportPayloadsUnchanged": true,
-  "roundtripPayloadsMatch": true,
+  "energyAssets": 30,
+  "wirelessAssets": 13,
+  "totalModpackAssetPaths": 977,
   "conflicts": 0,
-  "totalModpackAssetPaths": 975,
-  "registryEntries": 10,
-  "runtimeItemAndSkillReferences": "5 items and 5 skills resolve their own matching 256x256 texture",
-  "runtimeRendering": "All 5 textures rendered by native engine at 256px and 64px; visually checked",
-  "saveFilesUnchanged": 6,
-  "gameplayExportPayloadsUnchanged": true
+  "energyChangedAssets": [
+    "Icon_LargeMethane_Green",
+    "Icon_PortableMethane_Green",
+    "MI_LargeMethane_Green",
+    "MI_PortableMethane_Green"
+  ],
+  "wirelessChangedExistingAssets": [
+    "DA_Module_WirelessResourceTransmitter",
+    "DA_Module_WirelessResourceTransmitter_Socket_Electricity"
+  ],
+  "newWirelessIcons": 2,
+  "originalIconOverrides": 0,
+  "allGameplayBlueprintsAndRecipesByteIdentical": true,
+  "wirelessLuaUnchanged": true,
+  "roundtripPayloadsMatch": true,
+  "nativeIconBindingsChecked": 12,
+  "nativeRenderingSizes": [
+    256,
+    64
+  ],
+  "allSevenIconsRendered": true,
+  "methaneHousingColor": {
+    "hueShift": 0.41,
+    "desaturation": 0.8,
+    "brightness": -0.15,
+    "reference": "Original methane tank muted grey-green",
+    "verification": "Native model preview with equivalent compiled scalar overrides; original game material overrides removed after test"
+  },
+  "savesUnchanged": 6,
+  "testHelpersRemoved": true
 }

@@ -17,7 +17,7 @@ MapPath=args[0];string stock=args[1],specPath=args[2],source=args[3],reports=arg
 Directory.CreateDirectory(reports);
 var spec=JArray.Parse(File.ReadAllText(specPath));var records=new List<object>();
 foreach(var row in spec){
- string original=(string)row["original"],id=(string)row["id"],target="/Game/CaretakerEnergy/Icons/"+id;
+ string original=(string)row["original"],id=(string)row["id"],target=((string)row["packageRoot"]??"/Game/CaretakerEnergy/Icons")+"/"+id;
  string imagePath=Path.Combine(Path.GetDirectoryName(specPath),(string)row["image"]);
  var a=Load(Path.Combine(stock,"Voyage","Content",original[6..]+".uasset"));
  Require(a.Exports.Count==1,"Expected one texture export");var e=(NormalExport)a.Exports[0];var extra=e.Extras;
@@ -55,6 +55,6 @@ foreach(var row in spec){
   asset.Write(path);Load(path);
  }
  records.Add(new{id,sourceImageSha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(imagePath))).ToLowerInvariant(),pixelSha256=Convert.ToHexString(SHA256.HashData(pixels)).ToLowerInvariant(),width=256,height=256,transparentPixels=transparent,opaquePixels=opaque,bindings=row["bindings"]});
- Console.WriteLine("Built icon "+id+" and both item/skill references");
+ Console.WriteLine("Built icon "+id+" and "+((JArray)row["bindings"]).Count+" references");
 }
 File.WriteAllText(Path.Combine(reports,"icons-verification.json"),Newtonsoft.Json.JsonConvert.SerializeObject(records,Newtonsoft.Json.Formatting.Indented));

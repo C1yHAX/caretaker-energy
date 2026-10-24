@@ -4,7 +4,7 @@
 
 - Vier zusätzliche Diesel-/Methangeneratoren und eine stationäre Benzinraffinerie in einem gemeinsamen Paket.
 - Freischaltungen, Rezepte und Brennstoffanschlüsse passend zur Progression; Originalgeräte bleiben erhalten.
-- Benzinraffinerie rot, Dieselgeneratoren gelb, Methangeneratoren grün.
+- Benzinraffinerie rot, Dieselgeneratoren gelb, Methangeneratoren in gedämpftem Graugrün passend zu den Methantanks, bei Gehäusen und Icons.
 - Fünf eigene farbige Icons für Inventar, Baumenü und Freischaltungen, transparent und in der UI-Auflösung 256×256.
 - Die Original-Icons und Originalmaterialien werden nicht überschrieben.
 - Unbegrenzte organische Aufnahme der zusätzlichen Benzinraffinerie; Methaneingang ausdrücklich bis 72.000/h.

@@ -6,8 +6,20 @@ Gemeinsamer Prompt: „Use case: precise-object-edit. Asset type: transparent in
 
 | Quelle | Bearbeitung |
 |---|---|
-| Icon_Module_PortableGenerator | Tragbarer Diesel: kräftiges industrielles Gelb; tragbares Methan: kräftiges Grün |
-| Icon_Module_Generator | Großer Diesel: kräftiges industrielles Gelb; großes Methan: kräftiges Grün |
+| Icon_Module_PortableGenerator | Tragbarer Diesel: kräftiges industrielles Gelb; tragbares Methan: gedämpftes Graugrün passend zum originalen Methantank |
+| Icon_Module_Generator | Großer Diesel: kräftiges industrielles Gelb; großes Methan: gedämpftes Graugrün passend zum originalen Methantank |
 | Icon_Module_OilGenerator | Benzinraffinerie: gelbe obere und blaue untere Lackflächen rot; Metall, Rohre, Glas und organischer Inhalt erhalten |
 
 Die PNGs sind die ausgewählten generierten Quellen. IconBuilder übernimmt ausschließlich Größen-/Formatkonvertierung in das native UI-Texturformat. Es gibt keinen laufenden Farbfilter im Spiel.
+
+## Methan-Farbabgleich für 1.0.0
+
+Bild 1: bisheriges Generator-Icon. Bild 2: das Referenz-Icon des originalen Methantanks. Eingebautes image_gen-Werkzeug, transparenter Hintergrund.
+
+### portable-methane.png
+
+Use case: precise-object-edit. Edit target Image 1: existing portable methane generator inventory icon. Color reference Image 2: the original game methane tank. Change ONLY the bright neon green painted casing panels on image 1 to the tank's dark muted desaturated grey-green / sage / forest green, approximately lit midtone sRGB #526960, shadows #263b34. Match the subdued industrial paint of the tank, NOT saturated bright green. Preserve the exact generator silhouette, orientation, shape, framing, mechanical detail, black/dark-grey parts, silver metal, red warning socket/button, violet top port, scratches and lighting. Transparent background, single centered square inventory icon, no text or additional objects. Existing alpha must remain clean.
+
+### large-methane.png
+
+Use case: precise-object-edit. Edit target Image 1: existing large methane generator inventory icon. Color reference Image 2: the original game methane tank. Change ONLY the bright neon green painted casing panels on image 1 to the tank's dark muted desaturated grey-green / sage / forest green, approximately lit midtone sRGB #526960, shadows #263b34. Match the subdued industrial paint of the tank, NOT saturated bright green. Preserve the exact generator silhouette, orientation, shape, framing, mechanical detail, black/dark-grey parts, silver metal, red warning socket, yellow switch assembly, scratches and lighting. Transparent background, single centered square inventory icon, no text or additional objects. Existing alpha must remain clean.
