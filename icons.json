@@ -1,0 +1,7 @@
+[
+ {"id":"Icon_PortableDiesel_Yellow","original":"/Game/UI/Icons/Modules/Icon_Module_PortableGenerator","image":"assets/icons/portable-diesel.png","bindings":["DA_Item_Module_PortableDieselElectricGenerator","DA_Skill_Engineering_Portable_Diesel_Electric_Generator"]},
+ {"id":"Icon_LargeDiesel_Yellow","original":"/Game/UI/Icons/Modules/Icon_Module_Generator","image":"assets/icons/large-diesel.png","bindings":["DA_Item_Module_LargeDieselElectricGenerator","DA_Skill_Engineering_Large_Diesel_Electric_Generator"]},
+ {"id":"Icon_PortableMethane_Green","original":"/Game/UI/Icons/Modules/Icon_Module_PortableGenerator","image":"assets/icons/portable-methane.png","bindings":["DA_Item_Module_PortableMethaneElectricGenerator","DA_Skill_Engineering_Portable_Methane_Electric_Generator"]},
+ {"id":"Icon_LargeMethane_Green","original":"/Game/UI/Icons/Modules/Icon_Module_Generator","image":"assets/icons/large-methane.png","bindings":["DA_Item_Module_LargeMethaneElectricGenerator","DA_Skill_Engineering_Large_Methane_Electric_Generator"]},
+ {"id":"Icon_PetrolRefinery_Red","original":"/Game/UI/Icons/Modules/Icon_Module_OilGenerator","image":"assets/icons/petrol-refinery.png","bindings":["DA_Item_Module_StationaryPetrolRefinery","DA_Skill_Engineering_Stationary_Petrol_Refinery"]}
+]

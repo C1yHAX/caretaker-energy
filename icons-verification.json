@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "assets": 30,
+  "ownIconTextures": 5,
+  "itemAndSkillBindings": 10,
+  "originalIconOverrides": 0,
+  "allExistingExportPayloadsUnchanged": true,
+  "roundtripPayloadsMatch": true,
+  "conflicts": 0,
+  "totalModpackAssetPaths": 975,
+  "registryEntries": 10,
+  "runtimeItemAndSkillReferences": "5 items and 5 skills resolve their own matching 256x256 texture",
+  "runtimeRendering": "All 5 textures rendered by native engine at 256px and 64px; visually checked",
+  "saveFilesUnchanged": 6,
+  "gameplayExportPayloadsUnchanged": true
+}

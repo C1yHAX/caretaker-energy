@@ -1,19 +1,13 @@
 # Changelog
 
-## 1.2.0 – 2026-10-24
+## 1.0.0 – Erstrelease, 24. Oktober 2026
 
-- Eigene Gehäusefarben: stationäre Benzinraffinerie rot, Dieselgeneratoren gelb, Methangeneratoren grün.
-- Sechs separate Materialinstanzen verwenden die vorhandenen Shader; die Originalgeräte und gemeinsam verwendeten Spielmaterialien bleiben unverändert.
-- Zwei eigene BC1-Farbtexturen vereinheitlichen die mehrfarbigen Lackflächen der Raffinerie in Rot. Mip-Stufen, Kachelränder, Alphamodus und Streaminglayout bleiben erhalten; Chunk-Prüfsummen werden erneuert.
-- Reproduzierbare Materialzuordnung und Farbwerte in `appearance.json` und dem AppearanceBuilder.
-- Item-, Blueprint- und Skill-Identitäten sowie Leistungswerte und Rezepte bleiben erhalten.
+- Vier zusätzliche Diesel-/Methangeneratoren und eine stationäre Benzinraffinerie in einem gemeinsamen Paket.
+- Freischaltungen, Rezepte und Brennstoffanschlüsse passend zur Progression; Originalgeräte bleiben erhalten.
+- Benzinraffinerie rot, Dieselgeneratoren gelb, Methangeneratoren grün.
+- Fünf eigene farbige Icons für Inventar, Baumenü und Freischaltungen, transparent und in der UI-Auflösung 256×256.
+- Die Original-Icons und Originalmaterialien werden nicht überschrieben.
+- Unbegrenzte organische Aufnahme der zusätzlichen Benzinraffinerie; Methaneingang ausdrücklich bis 72.000/h.
+- Installer mit Sicherung, Quellcode, Balanceparameter, Iconquellen und Build-Anleitung.
 
-## 1.1.0 – 2026-10-23
-
-- Gemeinsamer Container für vier Generatoren und die stationäre Benzinraffinerie.
-- Vorhandene Item-, Blueprint- und Skill-Identitäten beibehalten.
-- Gewichtszulassungsgrenze für organisches Material in der neuen Raffinerie aufgehoben.
-- Ausdrückliche Durchflussgrenze von 72.000/h am Methaneingang beibehalten.
-- Installationsskript mit Sicherung und Erkennung der beiden Vorgängerpakete.
-- Quellcode, Balanceparameter, Prüfsummen und Anleitung für den Nachbau.
-- Statisch validierte Vorschau; vollständiger Spieltest steht aus.
+Die zuvor vorläufig verwendeten Versionsnummern waren Entwicklungsstände. Die öffentliche Erstrelease-Version ist einheitlich **1.0.0**; bestehende Item-, Blueprint- und Skill-Identitäten bleiben erhalten.

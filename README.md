@@ -2,7 +2,7 @@
 
 Vier zusätzliche Diesel- und Methan-Stromgeneratoren **und eine stationäre Benzinraffinerie in einer gemeinsamen Mod** für *The Last Caretaker*. Die vorhandenen Benzingeneratoren, die tragbare Benzinraffinerie und die Dieselraffinerie bleiben verfügbar.
 
-[Download auf GitHub](https://github.com/C1yHAX/caretaker-energy/releases/tag/v1.2.0) · [Download auf GitLab](https://gitlab.com/c0d1ngf1eber/caretaker-energy/-/releases/v1.2.0)
+[Download auf GitHub](https://github.com/C1yHAX/caretaker-energy/releases/tag/v1.0.0) · [Download auf GitLab](https://gitlab.com/c0d1ngf1eber/caretaker-energy/-/releases/v1.0.0)
 
 ## Inhalt und Balance
 
@@ -22,14 +22,17 @@ Die neue Benzinraffinerie nimmt organisches Material ohne Gewichtszulassungsgren
 
 Die Gehäuse sind nach Brennstoff eingefärbt: **Benzin rot, Diesel gelb, Methan grün**. Sechs eigene Materialinstanzen verwenden die vorhandenen Shader. Zwei eigene Farbtexturen färben die Lackflächen der Raffinerie rot; ihre Kompression, 13 Mip-Stufen und das virtuelle Textur-Streaming bleiben erhalten. Normalen- und Oberflächentexturen stammen weiterhin aus dem Spiel. Metall, Verschleißspuren und mechanische Details bleiben erkennbar; die Farben der ursprünglichen Geräte werden nicht überschrieben. Dafür ist kein dauerhaft laufendes Skript nötig.
 
-Modelle und Inventarsymbole stammen aus den Vorlagen. Namen, Brennstoffanschlüsse, Umwandlungen und Skills sind eigenständig. Gegenstandsgewicht: 0, passend zum ursprünglichen Modpack. Die Modtexte sind deutsch, auch bei anders eingestellter Spielsprache.
+Modelle stammen aus den Spielvorlagen. Fünf eigene farbige Icons zeigen Diesel gelb, Methan grün und die Benzinraffinerie rot. Sie sind sowohl an die Gegenstände als auch an ihre Freischaltungen gebunden. Die Original-Icons des Spiels werden nicht überschrieben. Die Iconvarianten wurden mit KI-Bildbearbeitung aus den Originalsymbolen erstellt und als transparente 256×256-UI-Texturen integriert. Namen, Brennstoffanschlüsse, Umwandlungen und Skills sind eigenständig. Gegenstandsgewicht: 0, passend zum ursprünglichen Modpack. Die Modtexte sind deutsch, auch bei anders eingestellter Spielsprache.
+
+
+![Farbige Icons, in der Spielengine bei 256 und 64 Pixeln gerendert](assets/icons/preview.png)
 
 ## Installation
 
 Zielversion: **0.10.0.653173, Steam-Build 25982825**. Andere Spielversionen sind nicht bestätigt.
 
 1. [AssetBridge von NotLazy](https://www.nexusmods.com/thelastcaretaker/mods/225) installieren; dieses Paket wurde mit **0.4.0** gebaut und geprüft. AssetBridge wird separat vom Autor bezogen.
-2. Spiel und Modmanager schließen. Aus dem Release die Datei `Caretaker-Energy-1.2.0.zip` herunterladen und entpacken.
+2. Spiel und Modmanager schließen. Aus dem Release die Datei `Caretaker-Energy-1.0.0.zip` herunterladen und entpacken.
 3. Den im ZIP enthaltenen Ordner `Voyage` in den Spielordner kopieren. Ergebnis: `Voyage/Content/Paks/~mods/CaretakerEnergy/` enthält `.pak`, `.utoc`, `.ucas` und `.tlcaddon.json`. Alle vier Dateien gehören zusammen.
 4. Bei einem Upgrade die früheren Ordner **CaretakerFuelGenerators** und **CaretakerPetrolRefinery** vorher aus dem Paks-Verzeichnis herausnehmen. Nicht zusammen mit dem neuen Paket laden. Alternativ übernimmt der mitgelieferte PowerShell-Installer die Sicherung und den Austausch:
 
@@ -43,18 +46,18 @@ Die bisherigen Item-, Blueprint- und Skill-Pfade bleiben beim Upgrade erhalten. 
 
 ## Prüfung und bekannte Grenzen
 
-Die 25 Assets wurden vollständig gelesen, binär verlustfrei zurückgeschrieben und nach dem Packen mit unveränderten Exportdaten wieder extrahiert. Der Container ist verifiziert; die zehn Registrierungen sind eindeutig. Gegen die vorhandenen Addons wurden Paketpfade auf Überschneidungen geprüft.
+Die 30 Assets einschließlich fünf eigener Icontexturen wurden vollständig gelesen, binär verlustfrei zurückgeschrieben und nach dem Packen mit unveränderten Exportdaten wieder extrahiert. Der Container ist verifiziert; die zehn Registrierungen sind eindeutig. Gegen die vorhandenen Addons wurden Paketpfade auf Überschneidungen geprüft.
 
-**Version 1.2.0 bleibt eine Vorschau.** Zusätzlich zur statischen Prüfung wurden alle fünf Geräte in einer leeren Testwelt der Spielengine erzeugt und ihre Materialzuordnungen geprüft. Die Gehäusefarben wurden in Renderaufnahmen aus der Engine kontrolliert. Die unbegrenzte organische Aufnahme wurde an der geladenen Raffinerievorlage bestätigt. AssetBridge hat alle zehn Energy-Einträge im vollständigen Modpack erfolgreich registriert. Herstellung, Betrieb unter Last und Speichern/Laden sind für diese kombinierte Fassung noch nicht durch einen vollständigen Spieltest bestätigt. Bitte neue Versionen zunächst mit einer Kopie des Spielstands prüfen.
+**Version 1.0.0 ist der Erstrelease.** Zusätzlich zur statischen Prüfung wurden alle fünf Geräte in einer leeren Testwelt der Spielengine erzeugt und ihre Materialzuordnungen geprüft. Die Gehäusefarben wurden in Renderaufnahmen aus der Engine kontrolliert. Die unbegrenzte organische Aufnahme wurde an der geladenen Raffinerievorlage bestätigt. AssetBridge hat alle zehn Energy-Einträge im vollständigen Modpack erfolgreich registriert. Alle fünf Icontexturen wurden in der Spielengine geladen, in großer und kleiner Darstellung gerendert und ihre Verknüpfung mit allen fünf Items und fünf Skills bestätigt. Herstellung, Betrieb unter Last und Speichern/Laden sind für diese kombinierte Fassung noch nicht durch einen vollständigen Spieltest bestätigt. Bitte neue Versionen zunächst mit einer Kopie des Spielstands prüfen.
 
 Vor einer Deinstallation platzierte Geräte abbauen und Gegenstände aus Inventaren/Containern entfernen. Gespeicherte Skills verlieren ohne die Mod ihr Ziel. Die Installation selbst bearbeitet keine Spielstände.
 
 ## Quellcode und Änderungen
 
-`generators-spec.json` und `refinery-spec.json` enthalten Balance, Rezepte, Freischaltungen und Texte; `appearance.json` beschreibt Farben und Materialzuordnungen. Die C#-Builder erzeugen eigene Assets aus den lokal vorhandenen Spielvorlagen. Die Basisspiel-Assets und das Mapping werden nicht im Quellcode-Repository mitgeliefert. Siehe [BUILDING.md](BUILDING.md) und [CHANGELOG.md](CHANGELOG.md).
+`generators-spec.json` und `refinery-spec.json` enthalten Balance, Rezepte, Freischaltungen und Texte; `appearance.json` beschreibt Farben und Materialzuordnungen. `icons.json` enthält die Zuordnung der fünf farbigen Symbole zu Items und Skills; die PNG-Quellen liegen unter `assets/icons/`. Die C#-Builder erzeugen eigene Assets aus den lokal vorhandenen Spielvorlagen. Die Basisspiel-Assets und das Mapping werden nicht im Quellcode-Repository mitgeliefert. Siehe [BUILDING.md](BUILDING.md) und [CHANGELOG.md](CHANGELOG.md).
 
 Eigener Build- und Installationscode: MIT, siehe [LICENSE](LICENSE). Spielmodelle, Symbole und daraus abgeleitete gekochte Assets gehören weiterhin ihren jeweiligen Rechteinhabern; die Code-Lizenz erteilt daran keine eigenständigen Rechte. *The Last Caretaker* wird von Channel37 entwickelt. Dies ist eine inoffizielle Mod.
 
 ## English
 
-Adds portable and large diesel/methane electric generators plus a stationary petrol refinery in **one additive mod**. Unlock levels: diesel 8/17, methane 19/21, refinery 10. Housing colors: red petrol, yellow diesel, green methane. Existing game generators and refineries remain available. Requires the game build above and AssetBridge; download it separately from the linked author page. Install all four package files under `Voyage/Content/Paks/~mods/CaretakerEnergy`. Remove the previous separate CaretakerFuelGenerators/CaretakerPetrolRefinery containers when upgrading; saved asset identities are retained. In-game labels are German. Version 1.2.0 is a preview with static checks and successful spawning and material rendering in the game engine; a full gameplay/save-reload test is still pending.
+Adds portable and large diesel/methane electric generators plus a stationary petrol refinery in **one additive mod**. Unlock levels: diesel 8/17, methane 19/21, refinery 10. Housing colors: red petrol, yellow diesel, green methane. Existing game generators and refineries remain available. Requires the game build above and AssetBridge; download it separately from the linked author page. Install all four package files under `Voyage/Content/Paks/~mods/CaretakerEnergy`. Remove the previous separate CaretakerFuelGenerators/CaretakerPetrolRefinery containers when upgrading; saved asset identities are retained. In-game labels are German. Five custom icons match the red/yellow/green housing colors in item and skill menus. Version 1.0.0 is the first release with static checks and successful spawning and material rendering in the game engine; a full gameplay/save-reload test is still pending.
