@@ -34,11 +34,7 @@ Zielversion: **0.10.0.653173, Steam-Build 25982825**. Andere Spielversionen sind
 1. [AssetBridge von NotLazy](https://www.nexusmods.com/thelastcaretaker/mods/225) installieren; dieses Paket wurde mit **0.4.0** gebaut und geprüft. AssetBridge wird separat vom Autor bezogen.
 2. Spiel und Modmanager schließen. Aus dem Release die Datei `Caretaker-Energy-1.0.0.zip` herunterladen und entpacken.
 3. Den im ZIP enthaltenen Ordner `Voyage` in den Spielordner kopieren. Ergebnis: `Voyage/Content/Paks/~mods/CaretakerEnergy/` enthält `.pak`, `.utoc`, `.ucas` und `.tlcaddon.json`. Alle vier Dateien gehören zusammen.
-4. Bei einem Upgrade die früheren Ordner **CaretakerFuelGenerators** und **CaretakerPetrolRefinery** vorher aus dem Paks-Verzeichnis herausnehmen. Nicht zusammen mit dem neuen Paket laden. Alternativ übernimmt der mitgelieferte PowerShell-Installer die Sicherung und den Austausch:
-
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File .\Install-Energy.ps1 -GamePath 'E:\Games\steamapps\common\Voyage'
-   ```
+4. Bei einem Upgrade die früheren Ordner **CaretakerFuelGenerators** und **CaretakerPetrolRefinery** vorher aus dem Paks-Verzeichnis herausnehmen. Nicht zusammen mit dem neuen Paket laden. Ein optionaler PowerShell-Installer liegt im Repository; er ist kein Bestandteil des Mod-ZIPs.
 
 5. Spiel starten. AssetBridge registriert die fünf Items und fünf Skills. Die Gesamtzahl im Log hängt von weiteren installierten Addons ab.
 
@@ -61,3 +57,9 @@ Eigener Build- und Installationscode: MIT, siehe [LICENSE](LICENSE). Spielmodell
 ## English
 
 Adds portable and large diesel/methane electric generators plus a stationary petrol refinery in **one additive mod**. Unlock levels: diesel 8/17, methane 19/21, refinery 10. Housing colors: red petrol, yellow diesel, muted grey-green methane matching the methane tanks. Existing game generators and refineries remain available. Requires the game build above and AssetBridge; download it separately from the linked author page. Install all four package files under `Voyage/Content/Paks/~mods/CaretakerEnergy`. Remove the previous separate CaretakerFuelGenerators/CaretakerPetrolRefinery containers when upgrading; saved asset identities are retained. In-game labels are German. Five custom icons match the red/yellow/muted grey-green housing colors in item and skill menus. Version 1.0.0 is the first release with static checks and successful spawning and material rendering in the game engine; a full gameplay/save-reload test is still pending.
+
+## Inhalt des Mod-Downloads
+
+Das Release-ZIP enthält ausschließlich die zum Betrieb benötigten Moddateien in der `Voyage`-Ordnerstruktur. Anleitung, Änderungslisten, Lizenztexte, Drittanbieterhinweise, Entwicklungswerkzeuge und Prüfberichte bleiben im Repository bzw. auf der Release-Seite. Sie werden nicht mit ins Mod-ZIP gepackt. Die Prüfsumme ist ein separater Download. Version bleibt **1.0.0**.
+
+Zur Paketierung eines geprüften Builds: `python tools/package_release.py --package <Buildordner>/package`. Die vier Dateien werden gegen `Dateien.json` geprüft. Neue Builds erfordern einen bewusst aktualisierten Dateikatalog. Das lokale vollständige Modpack wird mit `python tools/package_modpack.py --source <Stagingordner> --output <Ziel.zip>` ebenfalls ohne Dokumentation gepackt.

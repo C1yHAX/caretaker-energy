@@ -1,0 +1,22 @@
+[
+  {
+    "path": "Voyage/Content/Paks/~mods/CaretakerEnergy/CaretakerEnergy_P.pak",
+    "bytes": 347,
+    "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+  },
+  {
+    "path": "Voyage/Content/Paks/~mods/CaretakerEnergy/CaretakerEnergy_P.tlcaddon.json",
+    "bytes": 2643,
+    "sha256": "987a2d7c50c1e3c6b4315b28556515db51e80247a9b7e48857fd306d7041bebb"
+  },
+  {
+    "path": "Voyage/Content/Paks/~mods/CaretakerEnergy/CaretakerEnergy_P.ucas",
+    "bytes": 27052836,
+    "sha256": "23fa7563caaa01636928f03aa60c9015737c6f902fa29bfdd7df186ff39c2dc8"
+  },
+  {
+    "path": "Voyage/Content/Paks/~mods/CaretakerEnergy/CaretakerEnergy_P.utoc",
+    "bytes": 9256,
+    "sha256": "6895c1f97a7bb881e6dfd6b2baa49441e7f6c0ad1264cccad4e4e08a065d7e2f"
+  }
+]
