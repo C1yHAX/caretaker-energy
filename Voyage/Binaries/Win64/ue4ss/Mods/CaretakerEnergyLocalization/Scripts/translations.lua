@@ -1,0 +1,12 @@
+-- Generated from localization.json. English native text; German translation.
+return {
+    {namespace="ST_Mod_FuelGenerators", key="Module_Name_PortableDieselElectricGenerator", en="Portable Diesel Generator", de="Tragbarer Diesel-Stromgenerator"},
+    {namespace="ST_Mod_FuelGenerators", key="Module_Name_LargeDieselElectricGenerator", en="Large Diesel Generator", de="Großer Diesel-Stromgenerator"},
+    {namespace="ST_Mod_FuelGenerators", key="Module_Name_PortableMethaneElectricGenerator", en="Portable Methane Generator", de="Tragbarer Methan-Stromgenerator"},
+    {namespace="ST_Mod_FuelGenerators", key="Module_Name_LargeMethaneElectricGenerator", en="Large Methane Generator", de="Großer Methan-Stromgenerator"},
+    {namespace="ST_Mod_FuelGenerators", key="Module_Desc_DieselElectricGenerator", en="Generates electricity from diesel. Uses less fuel than the petrol version for the same output.", de="Erzeugt Strom aus Diesel. Braucht für dieselbe Leistung weniger Brennstoff als die Benzinversion."},
+    {namespace="ST_Mod_FuelGenerators", key="Module_Desc_MethaneElectricGenerator", en="Generates electricity from methane. Supply it through a gas hose, for example from a methane extractor or tank.", de="Erzeugt Strom aus Methan. Wird über eine Gasleitung versorgt, z. B. vom Methan-Extraktor oder aus einem Methantank."},
+    {namespace="ST_Mod_StationaryPetrolRefinery", key="Module_Name_StationaryPetrolRefinery", en="Petrol Refinery", de="Benzinraffinerie"},
+    {namespace="ST_Mod_StationaryPetrolRefinery", key="Module_Desc_StationaryPetrolRefinery", en="Stationary refinery that produces petrol from organic material and electricity. Produces more petrol than the portable refinery but uses more electricity.", de="Stationäre Raffinerie, die aus organischem Material und Strom Benzin herstellt. Ergiebiger als die tragbare Benzinraffinerie, braucht aber mehr Strom."},
+    {namespace="ST_Mod_StationaryPetrolRefinery", key="ModuleTypePetrolProducer", en="Petrol Producer - Tier {Tier}", de="Benzinproduzent - Stufe {Tier}"},
+}

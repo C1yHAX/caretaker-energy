@@ -5,11 +5,23 @@ $game = (Resolve-Path -LiteralPath $GamePath).Path
 $paks = Join-Path $game 'Voyage\Content\Paks'
 if (-not (Test-Path -LiteralPath (Join-Path $game 'Voyage\Binaries\Win64\VoyageSteam-Win64-Shipping.exe'))) { throw 'Kein passender Spielordner.' }
 if (-not (Test-Path -LiteralPath (Join-Path $game 'Voyage\Binaries\Win64\version.dll'))) { throw 'AssetBridge zuerst installieren (siehe README).' }
+$luaRelative = 'Voyage\Binaries\Win64\ue4ss\Mods\CaretakerEnergyLocalization'
+$luaSource = Join-Path $PSScriptRoot $luaRelative
+$luaDest = Join-Path $game $luaRelative
+if (-not (Test-Path -LiteralPath (Join-Path $game 'Voyage\Binaries\Win64\ue4ss\UE4SS.dll'))) { throw 'UE4SS zuerst installieren (siehe README).' }
+$luaRecords = @(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'Dateien.json') -Raw | ConvertFrom-Json | Where-Object { $_.path -like 'Voyage/Binaries/Win64/ue4ss/Mods/CaretakerEnergyLocalization/*' })
+if ($luaRecords.Count -ne 4) { throw 'Unvollstaendige Sprachdateien.' }
+foreach ($record in $luaRecords) {
+ if ($record.path -match '\.\.') { throw 'Unsicherer Sprachdateipfad.' }
+ if ((Get-FileHash -LiteralPath (Join-Path $PSScriptRoot $record.path) -Algorithm SHA256).Hash -ne $record.sha256) { throw 'Pruefsumme der Sprachdatei falsch.' }
+}
 $source = Join-Path $PSScriptRoot 'Voyage\Content\Paks\~mods\CaretakerEnergy'
 $expected = @('CaretakerEnergy_P.pak','CaretakerEnergy_P.utoc','CaretakerEnergy_P.ucas','CaretakerEnergy_P.tlcaddon.json')
 foreach ($name in $expected) { if (-not (Test-Path -LiteralPath (Join-Path $source $name))) { throw "Release-Datei fehlt: $name" } }
-$manifestPath = Join-Path $PSScriptRoot 'package-hashes.json'
-$manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+$manifestPath = Join-Path $PSScriptRoot 'Dateien.json'
+$manifest = @(Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json | Where-Object { $_.path -like 'Voyage/Content/Paks/~mods/CaretakerEnergy/*' } | ForEach-Object {
+ [PSCustomObject]@{ name = [IO.Path]::GetFileName($_.path); sha256 = $_.sha256 }
+})
 if ($manifest.Count -ne 4 -or @($manifest.name | Sort-Object -Unique).Count -ne 4) { throw 'Unerwartete Paketliste.' }
 foreach ($record in $manifest) { if ($record.name -notin $expected) { throw 'Unbekannte Datei im Manifest.' } }
 foreach ($record in $manifest) { if ((Get-FileHash -LiteralPath (Join-Path $source $record.name) -Algorithm SHA256).Hash -ne $record.sha256) { throw "Pruefsumme falsch: $($record.name)" } }
@@ -29,10 +41,25 @@ foreach ($old in $allowedPaths) {
 }
 $dest=Join-Path $paks '~mods\CaretakerEnergy'
 try {
+ if (Test-Path -LiteralPath $luaDest) {
+  $resolvedLua = (Resolve-Path -LiteralPath $luaDest).Path
+  if ($resolvedLua -ne [IO.Path]::GetFullPath($luaDest)) { throw 'Unsicherer Sprachmodpfad.' }
+  Move-Item -LiteralPath $resolvedLua -Destination (Join-Path $backup 'CaretakerEnergyLocalization')
+ }
+ New-Item -ItemType Directory -Path (Split-Path $luaDest) -Force | Out-Null
+ Copy-Item -LiteralPath $luaSource -Destination $luaDest -Recurse
+ foreach ($record in $luaRecords) { if ((Get-FileHash -LiteralPath (Join-Path $game $record.path) -Algorithm SHA256).Hash -ne $record.sha256) { throw 'Sprachdatei nach Installation falsch.' } }
  New-Item -ItemType Directory -Path $dest -Force | Out-Null
  foreach ($name in $expected) { Copy-Item -LiteralPath (Join-Path $source $name) -Destination $dest }
  foreach ($record in $manifest) { if ((Get-FileHash -LiteralPath (Join-Path $dest $record.name) -Algorithm SHA256).Hash -ne $record.sha256) { throw 'Pruefsumme nach Installation falsch.' } }
 } catch {
+ if (Test-Path -LiteralPath $luaDest) {
+  $resolvedLua = (Resolve-Path -LiteralPath $luaDest).Path
+  if ($resolvedLua -ne [IO.Path]::GetFullPath($luaDest)) { throw 'Unsicherer Wiederherstellungspfad.' }
+  Move-Item -LiteralPath $resolvedLua -Destination (Join-Path $backup 'FailedLocalizationInstall')
+ }
+ $savedLua = Join-Path $backup 'CaretakerEnergyLocalization'
+ if (Test-Path -LiteralPath $savedLua) { Move-Item -LiteralPath $savedLua -Destination (Split-Path $luaDest) }
  if (Test-Path -LiteralPath $dest) {
   $resolved=(Resolve-Path -LiteralPath $dest).Path
   if (-not $resolved.StartsWith($paks+'\',[StringComparison]::OrdinalIgnoreCase)) { throw 'Unsicherer Wiederherstellungspfad.' }

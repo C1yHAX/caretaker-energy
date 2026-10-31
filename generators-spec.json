@@ -24,76 +24,132 @@
   },
   "variants": [
     {
-      "fuel": "Diesel", "size": "Portable",
+      "fuel": "Diesel",
+      "size": "Portable",
       "item": "DA_Item_Module_PortableDieselElectricGenerator",
       "blueprint": "BP_Module_PortableDieselElectricGenerator",
       "skill": "DA_Skill_Engineering_Portable_Diesel_Electric_Generator",
       "moduleName": "Small Diesel Electric Generator",
       "nameKey": "Module_Name_PortableDieselElectricGenerator",
       "descKey": "Module_Desc_DieselElectricGenerator",
-      "tier": 8, "cost": 2, "weight": 0.0,
-      "components": { "DA_Part_ConnectorPorts": 2, "DA_Part_AlloyFrame": 2, "DA_Part_CoolingRadiator": 1, "DA_Part_CompressionPump": 2 },
+      "tier": 8,
+      "cost": 2,
+      "weight": 0.0,
+      "components": {
+        "DA_Part_ConnectorPorts": 2,
+        "DA_Part_AlloyFrame": 2,
+        "DA_Part_CoolingRadiator": 1,
+        "DA_Part_CompressionPump": 2
+      },
       "conversion": {
-        "inputs": { "EModuleResourceType::Diesel": 1.5 },
-        "outputs": { "EModuleResourceType::Electricity": 10.0, "EModuleResourceType::CarbonDioxide": 17.0 }
+        "inputs": {
+          "EModuleResourceType::Diesel": 1.5
+        },
+        "outputs": {
+          "EModuleResourceType::Electricity": 10.0,
+          "EModuleResourceType::CarbonDioxide": 17.0
+        }
       }
     },
     {
-      "fuel": "Diesel", "size": "Large",
+      "fuel": "Diesel",
+      "size": "Large",
       "item": "DA_Item_Module_LargeDieselElectricGenerator",
       "blueprint": "BP_Module_LargeDieselElectricGenerator",
       "skill": "DA_Skill_Engineering_Large_Diesel_Electric_Generator",
       "moduleName": "Large Diesel Electric Generator",
       "nameKey": "Module_Name_LargeDieselElectricGenerator",
       "descKey": "Module_Desc_DieselElectricGenerator",
-      "tier": 17, "cost": 3, "weight": 0.0,
-      "components": { "DA_Part_ConnectorPorts": 4, "DA_Part_AlloyFrame": 5, "DA_Part_CoolingRadiator": 1, "DA_Part_CompressionPump": 2, "DA_Part_AdvancedAlloyMesh": 2, "DA_Part_PowerCore": 1 },
+      "tier": 17,
+      "cost": 3,
+      "weight": 0.0,
+      "components": {
+        "DA_Part_ConnectorPorts": 4,
+        "DA_Part_AlloyFrame": 5,
+        "DA_Part_CoolingRadiator": 1,
+        "DA_Part_CompressionPump": 2,
+        "DA_Part_AdvancedAlloyMesh": 2,
+        "DA_Part_PowerCore": 1
+      },
       "conversion": {
-        "inputs": { "EModuleResourceType::Diesel": 1.5 },
-        "outputs": { "EModuleResourceType::Electricity": 11.0, "EModuleResourceType::CarbonDioxide": 19.0 }
+        "inputs": {
+          "EModuleResourceType::Diesel": 1.5
+        },
+        "outputs": {
+          "EModuleResourceType::Electricity": 11.0,
+          "EModuleResourceType::CarbonDioxide": 19.0
+        }
       }
     },
     {
-      "fuel": "Methane", "size": "Portable",
+      "fuel": "Methane",
+      "size": "Portable",
       "item": "DA_Item_Module_PortableMethaneElectricGenerator",
       "blueprint": "BP_Module_PortableMethaneElectricGenerator",
       "skill": "DA_Skill_Engineering_Portable_Methane_Electric_Generator",
       "moduleName": "Small Methane Electric Generator",
       "nameKey": "Module_Name_PortableMethaneElectricGenerator",
       "descKey": "Module_Desc_MethaneElectricGenerator",
-      "tier": 19, "cost": 2, "weight": 0.0,
-      "components": { "DA_Part_ConnectorPorts": 2, "DA_Part_AlloyFrame": 1, "DA_Part_CoolingRadiator": 1, "DA_Part_CompressionPump": 2 },
+      "tier": 19,
+      "cost": 2,
+      "weight": 0.0,
+      "components": {
+        "DA_Part_ConnectorPorts": 2,
+        "DA_Part_AlloyFrame": 1,
+        "DA_Part_CoolingRadiator": 1,
+        "DA_Part_CompressionPump": 2
+      },
       "conversion": {
-        "inputs": { "EModuleResourceType::Methane": 20.0 },
-        "outputs": { "EModuleResourceType::Electricity": 10.0, "EModuleResourceType::CarbonDioxide": 20.0 }
+        "inputs": {
+          "EModuleResourceType::Methane": 20.0
+        },
+        "outputs": {
+          "EModuleResourceType::Electricity": 10.0,
+          "EModuleResourceType::CarbonDioxide": 20.0
+        }
       }
     },
     {
-      "fuel": "Methane", "size": "Large",
+      "fuel": "Methane",
+      "size": "Large",
       "item": "DA_Item_Module_LargeMethaneElectricGenerator",
       "blueprint": "BP_Module_LargeMethaneElectricGenerator",
       "skill": "DA_Skill_Engineering_Large_Methane_Electric_Generator",
       "moduleName": "Large Methane Electric Generator",
       "nameKey": "Module_Name_LargeMethaneElectricGenerator",
       "descKey": "Module_Desc_MethaneElectricGenerator",
-      "tier": 21, "cost": 3, "weight": 0.0,
-      "components": { "DA_Part_ConnectorPorts": 4, "DA_Part_AlloyFrame": 4, "DA_Part_CoolingRadiator": 1, "DA_Part_CompressionPump": 2, "DA_Part_AdvancedAlloyMesh": 2, "DA_Part_PowerCore": 1 },
+      "tier": 21,
+      "cost": 3,
+      "weight": 0.0,
+      "components": {
+        "DA_Part_ConnectorPorts": 4,
+        "DA_Part_AlloyFrame": 4,
+        "DA_Part_CoolingRadiator": 1,
+        "DA_Part_CompressionPump": 2,
+        "DA_Part_AdvancedAlloyMesh": 2,
+        "DA_Part_PowerCore": 1
+      },
       "conversion": {
-        "inputs": { "EModuleResourceType::Methane": 20.0 },
-        "outputs": { "EModuleResourceType::Electricity": 11.0, "EModuleResourceType::CarbonDioxide": 20.0 }
+        "inputs": {
+          "EModuleResourceType::Methane": 20.0
+        },
+        "outputs": {
+          "EModuleResourceType::Electricity": 11.0,
+          "EModuleResourceType::CarbonDioxide": 20.0
+        }
       }
     }
   ],
   "strings": {
-    "comment": "German source text (game runs LanguageType=German; mod tables have no .locres translation).",
+    "comment": "English native text. localization.json supplies German through the bundled UE4SS localization module; follows game language.",
     "namespace": "ST_Mod_FuelGenerators",
     "entries": {
-      "Module_Name_PortableDieselElectricGenerator": "Tragbarer Diesel-Stromgenerator",
-      "Module_Name_LargeDieselElectricGenerator": "Großer Diesel-Stromgenerator",
-      "Module_Name_PortableMethaneElectricGenerator": "Tragbarer Methan-Stromgenerator",
-      "Module_Name_LargeMethaneElectricGenerator": "Großer Methan-Stromgenerator",
-      "Module_Desc_DieselElectricGenerator": "Erzeugt Strom aus Diesel. Braucht für dieselbe Leistung weniger Brennstoff als die Benzinversion.",
-      "Module_Desc_MethaneElectricGenerator": "Erzeugt Strom aus Methan. Wird über eine Gasleitung versorgt, z. B. vom Methan-Extraktor oder aus einem Methantank."
+      "Module_Name_PortableDieselElectricGenerator": "Portable Diesel Generator",
+      "Module_Name_LargeDieselElectricGenerator": "Large Diesel Generator",
+      "Module_Name_PortableMethaneElectricGenerator": "Portable Methane Generator",
+      "Module_Name_LargeMethaneElectricGenerator": "Large Methane Generator",
+      "Module_Desc_DieselElectricGenerator": "Generates electricity from diesel. Uses less fuel than the petrol version for the same output.",
+      "Module_Desc_MethaneElectricGenerator": "Generates electricity from methane. Supply it through a gas hose, for example from a methane extractor or tank."
     }
   }
 }

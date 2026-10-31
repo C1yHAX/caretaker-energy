@@ -20,13 +20,13 @@ def main():
     args = parser.parse_args()
     rows = json.loads((ROOT/'Dateien.json').read_text(encoding='utf-8'))
     expected = {row['path'] for row in rows}
-    assert len(rows) == len(expected) == 4, 'Unexpected runtime manifest'
+    assert len(rows) == len(expected) == 8, 'Unexpected runtime manifest'
     files = {}
     for row in rows:
         name = row['path']
         assert runtime_path(name), 'Non-runtime or unsafe path: '+name
         assert PurePosixPath(name).name not in {'settings.ini', 'destinations.tsv', 'hotspots.tsv'}
-        if KIND == 'energy':
+        if KIND == 'energy' and name.startswith('Voyage/Content/Paks/'):
             source = args.package/PurePosixPath(name).name
         elif KIND == 'warden':
             prefix = 'Voyage/Binaries/Win64/ue4ss/Mods/'
