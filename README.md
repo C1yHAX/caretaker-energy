@@ -2,7 +2,7 @@
 
 Vier zusätzliche Diesel- und Methan-Stromgeneratoren **und eine stationäre Benzinraffinerie in einer gemeinsamen Mod** für *The Last Caretaker*. Die vorhandenen Benzingeneratoren, die tragbare Benzinraffinerie und die Dieselraffinerie bleiben verfügbar.
 
-[Download auf GitHub](https://github.com/C1yHAX/caretaker-energy/releases/tag/v1.0.0) · [Download auf GitLab](https://gitlab.com/c0d1ngf1eber/caretaker-energy/-/releases/v1.0.0)
+[Download auf GitHub](https://github.com/C1yHAX/caretaker-energy/releases/tag/v1.0.1) · [Download auf GitLab](https://gitlab.com/c0d1ngf1eber/caretaker-energy/-/releases/v1.0.1)
 
 ## Inhalt und Balance
 
@@ -32,13 +32,19 @@ Modelle stammen aus den Spielvorlagen. Fünf eigene farbige Icons zeigen Diesel 
 Zielversion: **0.10.0.653173, Steam-Build 25982825**. Andere Spielversionen sind nicht bestätigt.
 
 1. [AssetBridge von NotLazy](https://www.nexusmods.com/thelastcaretaker/mods/225) installieren; die aktuelle Fassung wurde mit **0.4.1** geprüft. AssetBridge wird separat vom Autor bezogen.
-2. Spiel und Modmanager schließen. Aus dem Release die Datei `Caretaker-Energy-1.0.0.zip` herunterladen und entpacken.
+2. Spiel und Modmanager schließen. Aus dem Release die Datei `Caretaker-Energy-1.0.1.zip` herunterladen und entpacken.
 3. Den im ZIP enthaltenen Ordner `Voyage` in den Spielordner kopieren. Ergebnis: `Voyage/Content/Paks/~mods/CaretakerEnergy/` enthält `.pak`, `.utoc`, `.ucas` und `.tlcaddon.json`. Zusätzlich den enthaltenen Ordner `Voyage/Binaries/Win64/ue4ss/Mods/CaretakerEnergyLocalization` installieren. Alle acht Laufzeitdateien gehören zusammen; die automatische Übersetzung benötigt [UE4SS](https://www.nexusmods.com/thelastcaretaker/mods/4) v3.0.1-1125-g527a483b.
 4. Bei einem Upgrade die früheren Ordner **CaretakerFuelGenerators** und **CaretakerPetrolRefinery** vorher aus dem Paks-Verzeichnis herausnehmen. Nicht zusammen mit dem neuen Paket laden. Ein optionaler PowerShell-Installer liegt im Repository; er ist kein Bestandteil des Mod-ZIPs.
 
 5. Spiel starten. AssetBridge registriert die fünf Items und fünf Skills. Die Gesamtzahl im Log hängt von weiteren installierten Addons ab.
 
 Die bisherigen Item-, Blueprint- und Skill-Pfade bleiben beim Upgrade erhalten. Die ZIP enthält keine Spielstände, keine fremden Mods und keinen AssetBridge-Cache. Das vollständige Modpack enthält diese gemeinsame Mod bereits; dort nicht noch einmal installieren.
+
+## Fix 1.0.1 / Fehlerkorrektur
+
+Das Sprachupdate vom 31. Oktober verlor beim Rückextrahieren Verweise auf Original-Spieldaten. Version 1.0.1 stellt Rezepte, Baukategorien, Modelle und Materialien wieder her. Alle fünf Geräte wurden im laufenden Spiel in einer separaten Spielstandkopie erzeugt und geprüft. Die zwei Texttabellen behalten Englisch/Deutsch; die übrigen 31 Containerbestandteile einschließlich der Abhängigkeiten entsprechen bytegenau der funktionierenden Originalfassung. Die frühere Aussage, das Sprachupdate hätte alle übrigen Assets unverändert gelassen, war falsch. Details und Grenzen stehen in [RELEASE-NOTES.md](RELEASE-NOTES.md).
+
+The October 31 localization update lost references to original game assets. Version 1.0.1 restores recipes, build categories, meshes and materials. All five devices were spawned and checked in the running game using a separate save copy. English/German text is retained; the other 31 container chunks are byte-identical to the working original. The earlier claim that the language update preserved all other assets was incorrect. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for validation and limitations.
 
 ## Prüfung und bekannte Grenzen
 
@@ -60,6 +66,6 @@ Adds portable and large diesel/methane electric generators plus a stationary pet
 
 ## Inhalt des Mod-Downloads
 
-Das Release-ZIP enthält ausschließlich die zum Betrieb benötigten Moddateien in der `Voyage`-Ordnerstruktur. Anleitung, Änderungslisten, Lizenztexte, Drittanbieterhinweise, Entwicklungswerkzeuge und Prüfberichte bleiben im Repository bzw. auf der Release-Seite. Sie werden nicht mit ins Mod-ZIP gepackt. Die Prüfsumme ist ein separater Download. Version bleibt **1.0.0**.
+Das Release-ZIP enthält ausschließlich die zum Betrieb benötigten Moddateien in der `Voyage`-Ordnerstruktur. Anleitung, Änderungslisten, Lizenztexte, Drittanbieterhinweise, Entwicklungswerkzeuge und Prüfberichte bleiben im Repository bzw. auf der Release-Seite. Sie werden nicht mit ins Mod-ZIP gepackt. Die Prüfsumme ist ein separater Download. Aktuelle Fehlerkorrektur: **1.0.1**.
 
 Zur Paketierung eines geprüften Builds: `python tools/package_release.py --package <Buildordner>/package`. Die vier Container-/Registrierungsdateien und vier Lua-Mod-Dateien werden gegen `Dateien.json` geprüft. Neue Builds erfordern einen bewusst aktualisierten Dateikatalog. Das lokale vollständige Modpack wird mit `python tools/package_modpack.py --source <Stagingordner> --output <Ziel.zip>` ebenfalls ohne Dokumentation gepackt.

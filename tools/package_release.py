@@ -3,7 +3,7 @@ from pathlib import Path, PurePosixPath
 import argparse, hashlib, json, zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-ARCHIVE = 'Caretaker-Energy-1.0.0.zip'
+ARCHIVE = 'Caretaker-Energy-1.0.1.zip'
 KIND = 'energy'
 
 def runtime_path(name):

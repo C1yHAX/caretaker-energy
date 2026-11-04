@@ -31,12 +31,12 @@
   },
   {
     "path": "Voyage/Content/Paks/~mods/CaretakerEnergy/CaretakerEnergy_P.ucas",
-    "bytes": 27034449,
-    "sha256": "03b4e97526d12597371de79cb3b8b9baf4e7b019370d6b1b4ba19d2251c95f16"
+    "bytes": 27052658,
+    "sha256": "08056abf2af16cae52eacb59155d6e345b5db5332d96b61b81699a08e00638ea"
   },
   {
     "path": "Voyage/Content/Paks/~mods/CaretakerEnergy/CaretakerEnergy_P.utoc",
     "bytes": 9256,
-    "sha256": "7bd558824ceac5c56df4f6a7d726f46fb193ebdb3622a5b8adc486741647b9a9"
+    "sha256": "41fd1d6ae3bab549abdc77d9de3fdf6027906bb8b0016d741b545f50c5328160"
   }
 ]

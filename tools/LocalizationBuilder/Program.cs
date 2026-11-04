@@ -14,6 +14,8 @@ UAsset Read(string path) {
     var a = new UAsset(EngineVersion.VER_UE5_6, mappings) {
         FilePath=path, PayloadEngineVersionOverride=EngineVersion.VER_UE5_8 };
     using(var r=a.PathToReader(path)) a.Read(r);
+    if(a.Imports.Any(i=>i.ObjectName.ToString() is "/Engine/UnknownPackage" or "UnknownExport"))
+        throw new Exception("Unresolved imports; re-extract with the complete game containers: "+path);
     var raw=a.Exports.OfType<RawExport>().ToList();
     if(raw.Count>0 && !(Path.GetFileName(path).StartsWith("DA_Module_WallSocket_") && raw.Count==1 && raw[0].ObjectName.ToString()=="BP_CraftingLocationGenerator_WallSocket_C_0")) {
         Directory.CreateDirectory(args[2]);
@@ -28,12 +30,13 @@ UAsset Read(string path) {
     }
     return a;
 }
-Read(args[3]);
+var energyTablesOnly=catalog!=null && catalog.All(t=>((string)t["namespace"]!).StartsWith("ST_Mod_"));
+if(!energyTablesOnly) Read(args[3]);
 var stockRoot=Path.GetDirectoryName(args[3])!;
 var socket=Path.Combine(stockRoot,"BP_WirelessResource_Socket_Base.uasset");
-if(File.Exists(socket)) Read(socket);
+if(!energyTablesOnly && File.Exists(socket)) Read(socket);
 var fabrication=Path.GetFullPath(Path.Combine(stockRoot,"../../../Fabrication/BP_CraftingLocationGenerator_WallSocket.uasset"));
-if(File.Exists(fabrication)) Read(fabrication);
+if(!energyTablesOnly && File.Exists(fabrication)) Read(fabrication);
 var files=Directory.GetFiles(args[1],"*.uasset",SearchOption.AllDirectories)
     .Where(p=>Path.GetFileName(p).StartsWith("BP_") || Path.GetFileName(p).StartsWith("DA_") || Path.GetFileName(p).StartsWith("ST_"))
     .OrderBy(p=>Path.GetFileName(p).StartsWith("BP_")?0:1).ThenBy(p=>p).ToList();

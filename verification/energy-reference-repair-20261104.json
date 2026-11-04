@@ -1,0 +1,60 @@
+{
+  "version": "1.0.1",
+  "date": "2026-11-04",
+  "game": "0.10.0.653173",
+  "steamBuild": 25982825,
+  "assetBridge": "0.4.1",
+  "ue4ss": "3.0.1-1125-g527a483b",
+  "rootCause": "Incomplete legacy extraction replaced external game imports with UnknownPackage/UnknownExport during the October 31 localization update.",
+  "brokenPackageNativeReproduction": {
+    "items": 5,
+    "emptyIngredientLists": 5,
+    "missingBuildCategories": 5
+  },
+  "repair": {
+    "originalWorkingPackageSha256": "8af00b1002cd4e57233d01f9baafbb133d129396fb15f59bfe52ec97bd92417a",
+    "preservedRawChunks": 31,
+    "changedStringTableChunks": 2,
+    "containerHeaderAndDependenciesPreserved": true
+  },
+  "nativeChecks": {
+    "separateSaveCopy": true,
+    "recipes": {
+      "DA_Item_Module_StationaryPetrolRefinery": 4,
+      "DA_Item_Module_PortableDieselElectricGenerator": 4,
+      "DA_Item_Module_LargeDieselElectricGenerator": 6,
+      "DA_Item_Module_PortableMethaneElectricGenerator": 4,
+      "DA_Item_Module_LargeMethaneElectricGenerator": 6
+    },
+    "validBuildCategories": 5,
+    "validIcons": 5,
+    "spawnedInitializedDevices": 5,
+    "allSpawnedMeshMaterialSlotsResolve": true,
+    "ownedSkillTargetsAvailableAndCraftable": 5,
+    "localizedStringTableEntries": 9,
+    "cultures": [
+      "en",
+      "de",
+      "en-US",
+      "de-DE",
+      "fr",
+      "de",
+      "en"
+    ]
+  },
+  "limits": [
+    "Native actor and asset checks, not a full manual build-menu walkthrough.",
+    "Sustained operation and save/reload of every device were not re-tested.",
+    "The refinery skill contained one additional null entry at runtime in the full modpack. The Energy container has exactly one valid target; the source of the extra runtime entry was not established. All five Energy item targets resolve."
+  ],
+  "buildRegression": {
+    "rejectsBrokenExtraction": true,
+    "guardedRebuildMatchesNativeTestCandidateAll33Chunks": true
+  },
+  "archive": {
+    "name": "Caretaker-Energy-1.0.1.zip",
+    "sha256": "38518ff39c2a27f6a5c981c84a99928cf1bd65169315cb01f8e5a6c96f7326d3",
+    "runtimeFiles": 8
+  },
+  "originalSaveAndConfigFilesUnchanged": 14
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 – Reference repair / Referenzkorrektur, 4. November 2026
+
+- Restore original-game references lost in the October 31 language update: ingredients, categories, meshes and materials for all five devices. / Wiederherstellung der verlorenen Spieldaten-Verweise aller fünf Geräte.
+- Keep automatic English/German text while preserving all non-text container chunks. / Automatische Sprachwahl bleibt erhalten; übrige Containerbestandteile bleiben unverändert.
+- Reject unresolved imports during localization builds; verify final raw chunks and actual in-game loading. / Build-Abbruch bei ungültigen Verweisen, Prüfung des fertigen Pakets und der geladenen Geräte.
+- Make the original October 24 version 1.0.0 available as a rollback. / Originalfassung 1.0.0 vom 24. Oktober wieder als Rückfallversion verfügbar.
+
 ## 1.0.0 – Erstrelease, 24. Oktober 2026
 
 - Vier zusätzliche Diesel-/Methangeneratoren und eine stationäre Benzinraffinerie in einem gemeinsamen Paket.
